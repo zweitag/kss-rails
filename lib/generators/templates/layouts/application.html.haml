@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %title KSS Styleguide
+    = stylesheet_link_tag 'kss'
+    = stylesheet_link_tag 'application'
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+  %body
+    
+    %header
+      Styleguide
+    
+    #wrapper
+      %nav{:role => 'main'}
+        %ol
+          - @categories = { css: 'Styling (CSS)', html: 'Markup (HTML)', js: 'Behaviour (JavaScript)', rb: 'Rails (Ruby)' }
+          - @categories.each do |category, description|
+            %li= link_to description, {controller: category,  action: "overview"}, class: params[:controller] =="kss/#{category}" ? 'selected' : ''
+      %nav{:role => 'sub'}
+        %ol{start: '0'}
+          - @sub_categories.each do |sub_category, description|
+            %li= link_to description, {controller: params[:controller],  action: sub_category}, class: params[:action] == "#{sub_category}" ? 'selected' : ''
+      %div{role: 'main'}
+        = yield
+
+    = javascript_include_tag 'kss'
