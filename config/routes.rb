@@ -1,5 +1,8 @@
 Kss::Engine.routes.draw do
-  get '/styleguide' => 'home#styleguide'
+
+  [:css, :html, :js, :rb].each do |category|
+    match "#{category}/:action", :controller => category
+  end
   
-  root :to => 'home#index'
+  root :to => 'css#overview'
 end
