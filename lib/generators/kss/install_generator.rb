@@ -12,7 +12,7 @@ module Kss
       directory 'layouts', 'app/views/layouts/kss'
       directory 'stylesheets', 'app/assets/stylesheets'
 
-      route "mount Kss::Engine => '/styleguide' if Rails.env.development?"
+      route "mount Kss::Engine => '/styleguide'"
 
     end
   end
