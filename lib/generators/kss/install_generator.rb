@@ -6,14 +6,12 @@ module Kss
     desc 'KSS Rails Install'
 
     def install_steps
-
-      directory 'controllers', 'app/controllers/kss'
-      directory 'views', 'app/views/kss'
-      directory 'layouts', 'app/views/layouts/kss'
-      directory 'stylesheets', 'app/assets/stylesheets'
-
-      route "mount Kss::Engine => '/styleguide'"
-
+      copy_file 'overview.html.haml', 'app/views/kss/home/overview.html.haml'
+      copy_file 'example.html.haml', 'app/views/kss/home/example.css.sass'
+      copy_file 'example.css.sass', 'app/assets/stylesheets/example.css.sass'
+      copy_file 'application.html.haml', 'app/views/layouts/kss/application.html.haml'
+      copy_file 'home_controller.rb', 'app/controllers/kss/home_controller.rb'
+      route "mount Kss::Engine => '/kss'"
     end
   end
 end

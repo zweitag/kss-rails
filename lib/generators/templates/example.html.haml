@@ -1,0 +1,14 @@
+= styleguide_block '1.1' do
+  %button{:class => "$modifier_class"} Example Button
+
+%p This block above was created with a simple template call:
+%pre
+  %code
+    :preserve
+      = styleguide_block '1.1' do
+        %button{:class => "$modifier_class"} Example Button
+
+%p
+  Take a look at the source code of this Rails engine for more details. The goal
+  is to remove the pain from creating a styleguide — document your CSS, have
+  example HTML in your templates and automate as much as possible.
