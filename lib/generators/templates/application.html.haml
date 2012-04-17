@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %title Styleguide
+    = stylesheet_link_tag 'kss'
+    = stylesheet_link_tag 'application'
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+  %body
+    
+    %header
+      Styleguide
+    
+    #wrapper
+      %nav#sections
+        %ol{start: '0'}
+          - @sections.each do |section, title|
+            %li= link_to title, {controller: :home,  action: section}, class: params[:action] == "#{section}" ? 'selected' : ''
+      %div{role: 'main'}
+        = yield
+
+    = javascript_include_tag 'kss'

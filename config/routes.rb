@@ -1,5 +1,7 @@
 Kss::Engine.routes.draw do
   get '/styleguide' => 'home#styleguide'
   
-  root :to => 'home#index'
+  match "home/:action", :controller => :home
+
+  root :to => 'home#overview'
 end
