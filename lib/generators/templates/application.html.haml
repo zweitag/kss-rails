@@ -8,15 +8,15 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
   %body
     
-    %header
+    %header#styleguide-header
       Styleguide
     
-    #wrapper
-      %nav#sections
+    #styleguide
+      %nav#styleguide-sections
         %ol{start: '0'}
           - @sections.each do |section, title|
             %li= link_to title, {controller: :home,  action: section}, class: params[:action] == "#{section}" ? 'selected' : ''
-      %div{role: 'main'}
+      #styleguide-content
         = yield
 
     = javascript_include_tag 'kss'
