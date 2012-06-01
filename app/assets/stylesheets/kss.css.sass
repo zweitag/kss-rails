@@ -15,15 +15,14 @@ $dark-grey:         hsl(0, 0%, 22%)
 html, body
   height: 100%
 
-body
-  font-family: Helvetica, Arial, sans-serif
-  font-size: 13px
-
-#styleguide  
+#styleguide
   pre
     padding: 10px
     border: 1px solid $light-grey
     margin: 10px 0
+    font:
+      size: 13px
+      family: "Bitstream Vera Sans Mono","Courier", monospace
     line-height: 1.2em
     color: $dark-grey
     background-color: $white-grey
@@ -51,6 +50,7 @@ body
 // Layout
 // ---------------
 #styleguide
+  overflow: auto
   height: 100%
   padding: 30px 20%
   background: white
@@ -74,6 +74,7 @@ body
     list-style-type: decimal
     list-style-position: inside
   li
+    font-size: 13px
     color: $grey
   a
     display: block
@@ -90,11 +91,6 @@ body
 
 // Elements
 //----------------------
-h1.styleguide
-  margin: 0 0 -5px 0
-  font-size: 24px
-  color: #000
-
 .styleguide-example
   margin: 15px 0
   background: rgba(255, 255, 255, 0.5)
@@ -164,7 +160,10 @@ h1.styleguide
       font-weight: normal
       color: #222
 
-ul.styleguide-modifier
+.styleguide-modifier
   padding-left: 20px
+  font-size: 13px
+  li
+    margin: 10px
 
 //= require application
