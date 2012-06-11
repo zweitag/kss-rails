@@ -18,5 +18,7 @@
             %li= link_to title, {controller: :home,  action: section}, class: params[:action] == "#{section}" ? 'selected' : ''
       #styleguide-content
         = yield
+        
+      #styleguide-footer
 
     = javascript_include_tag 'kss'
